@@ -1,6 +1,17 @@
 # Concurrent Futures Performance Test
-- Initally tests the speed for writing to a text file using a for loop vs using concurrent.futures: I/O Bound functions.
-- It then adds a 'sleep' function to simulate CPU Bound functions. 
+
+Tests a linear processing approach using a for loop vs using a multithreaded approach with the 
+concurrent.futures module in Python.
+
+## Tests:
+
+• I/O Bound functions: opens file, writes to file, closes file.
+
+• CPU Bound functions: simulated CPU tasks using sleep function
+
 ## Conclusion:
-• In the case of file I/O a for loop seems faster
-• In the case of CPU Bound tasks, concurrent futures is much faster
+
+Multithreading using concurrent futures is faster that linear approaches to processing.
+However, asynchronous processing can cause its own problems, and there may still be a
+bottleneck on efficiency if synchronous tasks are dependent on completion of all asynchronous
+tasks.
